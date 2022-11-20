@@ -1,0 +1,165 @@
+$color1 : aqua
+$trans: 0.3s
+
+.App
+    background-color: black
+.menu
+    z-index: 1
+    > div
+        padding-right: 30px
+.grid
+    display: grid
+    grid-template-columns: repeat(5,1fr)
+    grid-template-rows: repeat(3,50vh)
+    grid-gap: 30px
+    .item
+        p
+          font-size: 1vw
+        .img-box
+            height: 50%
+            position: relative
+            overflow: hidden
+            img
+                height: 100%
+                object-fit: contain
+                transition: $trans
+            .triangle
+                position: absolute
+                bottom: 0
+                right: 0
+                border-right: solid #6c757d 17vw
+                border-top: solid transparent 8vh
+                transition: $trans
+            &:hover img
+                transform: scale(1.1)
+            &:hover .triangle
+                border-top-width: 0
+        .q-mark
+          padding: 0 4px
+          border: 1px solid
+          border-radius: 50%
+          font-size: 0.8em
+        button
+          font-size: 0.8vw
+        .btn-cart
+          color: $color1
+          font-weight: bold
+          border: solid 2px $color1
+          border-radius: 15px 8px 15px 8px
+          padding: 5px
+          overflow: hidden
+          div
+            color: $color1
+            display: inline-block
+            height: 15px
+            width: 15px
+            line-height: 8px
+            font-size: 1vw
+            font-weight: bold
+            border: solid $color1 2px
+            border-radius: 50%
+            transform: translateX(20px)
+            transition: $trans
+          &:hover div
+            transform: translateX(-5px)
+            margin-left: 10px
+.detail-page
+  position: fixed
+  width: 45vw
+  height: 70vh
+  top: 20vh
+  background-color: rgba(0, 0, 0, 0.9)
+  color: white
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  padding: 0 20px
+  right: -45vw
+  transition: $trans
+  .close
+    position: absolute
+    top: 5%
+    right: 5%
+    font-size: 1.2em
+    background-color: transparent
+    color: white
+    border: none
+  img
+    width: 25%
+    aspect-ratio: 1 / 1
+    border-radius: 10px
+  ul
+    font-size: 0.8em
+.show-detail
+  right: 0
+.close-list
+  display: none
+.open-list
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: absolute
+  width: 15vw
+  padding: 15px 0
+  aspect-ratio: 2 / 1
+  top: 200%
+  right: 30%
+  background-color: white
+  animation: opa 0.5s
+  ul
+    font-size: 0.7em
+    margin: 0 0 0 10px
+    padding: 0
+    list-style-type: none
+    li
+      margin-bottom: 5px
+      margin-right: 10px
+  p.total-price
+    margin: 0 auto
+    font-size: 0.7em
+    font-weight: bold
+@keyframes opa
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+.cart-anima
+  visibility: hidden
+  display: inline-block
+  color: transparent
+  position: absolute
+  right: 120%
+  border-top: solid 2px black
+  border-bottom: solid 2px black
+  text-align: center
+.show-anima1
+  visibility: visible
+  animation: show-box 1s forwards, show-number 1s 1s forwards
+@keyframes show-box
+  0%
+    width: 0
+    height: 0
+  50%
+    width: 20px
+    height: 0
+  100%
+    width: 20px
+    height: 30px
+.show-anima2
+  visibility: visible
+  color: transparent
+  animation: box-anima 1s 2 alternate forwards, show-number 1s 2s forwards
+@keyframes box-anima
+  0%
+    width: 20px
+    height: 30px
+  100%
+    width: 20px
+    height: 0
+@keyframes show-number
+  0%
+    color: transparent
+  100%
+    color: black
+
+
