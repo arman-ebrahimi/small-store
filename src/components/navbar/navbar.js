@@ -11,8 +11,8 @@ export const Navbar = () => {
 
     useEffect(() => {
         const target = document.getElementById('cart-anima');
+        target.classList.remove("show-anima2");
         if(cartProducts.length > 1){
-            target.classList.remove("show-anima2");
             void target.offsetWidth;
             target.classList.add("show-anima2");
         }

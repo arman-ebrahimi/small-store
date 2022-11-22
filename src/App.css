@@ -140,8 +140,14 @@
   margin-bottom: 5px;
   margin-right: 10px;
 }
+.open-list ul li input {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  outline: none;
+}
 .open-list p.total-price {
-  margin: 0 auto;
+  margin: 5px auto 0;
   font-size: 0.7em;
   font-weight: bold;
 }
@@ -207,6 +213,34 @@
   100% {
     color: black;
   }
+}
+button.cancel-order, button.order {
+  font-size: 0.7em;
+  width: max-content;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.cancel-order:hover {
+  background-color: red;
+  color: white;
+}
+
+.order:hover {
+  background-color: green;
+  color: white;
+}
+
+.d-product {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: rgba(255, 0, 0, 0.5);
+}
+.d-product:hover {
+  color: rgb(255, 0, 0);
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -11,7 +11,19 @@ export const CartList = ({showCart, cartProducts}) => {
         return total.toFixed(2);
     }
     const clearCart = () => {
-        dispatch({type: "cart/clearCart", payload: ""})
+        dispatch({type: "cart/clearCart"})
+    }
+    const removeProduct = (index) => {
+        dispatch({type: "cart/removeProduct", payload: index})
+    }
+    const changeCount = (e, index) => {
+        if(Number(e.target.value) > cartProducts[index].quantity){
+            return alert("Your order is more than the product's quantity");
+        }
+        dispatch({type: "cart/changeCount", payload: {count: Number(e.target.value), index: index}})
+    }
+    const finalOrder = () => {
+        document.getElementById("alert").style.display = "block";
     }
 
     return(
@@ -23,14 +35,21 @@ export const CartList = ({showCart, cartProducts}) => {
                         {cartProducts.map((item, index) => {
                                 return(
                                     <li className="d-flex justify-content-between" key={index}>
-                                        <span>{item.shortName}</span><span>{item.count}</span>
+                                        <span><button className="d-product" onClick={() => removeProduct(index)}>&#128473;</button>{item.shortName}</span>
+                                        <input onChange={(e) => changeCount(e,index)} type="text" value={item.count} />
                                     </li>
                                 )
                             }
                         )}
                     </ul>
                     <p className="total-price">Total Amounts: {totalPrices()}</p>
-                    <button onClick={clearCart}>Cancel order</button>
+                    <div className="d-flex justify-content-around mt-2">
+                        <button className="order" onClick={finalOrder}>Order</button>
+                        <button className="cancel-order" onClick={clearCart}>Cancel</button>
+                    </div>
+                    <div id="alert" className="alert alert-success text-center mt-2" style={{display: 'none'}}>
+                        successfully
+                    </div>
                 </>
             }
         </div>
