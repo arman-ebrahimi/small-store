@@ -3,7 +3,7 @@
 export const QuickView = ({isShow, product, handleClose}) => {
     return(
         <div className={`detail-page ${isShow && "show-detail"}`}>
-            <button className="close" onClick={handleClose}>&#x2715;</button>
+            <button className="close-detail" onClick={handleClose}>&#x2715;</button>
             <h6 className="w-75">{product.name}</h6>
             <ul>
                 {product.desc.map((item, index) => {

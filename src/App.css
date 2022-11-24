@@ -91,7 +91,7 @@
   right: -45vw;
   transition: 0.3s;
 }
-.detail-page .close {
+.detail-page .close-detail {
   position: absolute;
   top: 5%;
   right: 5%;
@@ -241,6 +241,36 @@ button.cancel-order, button.order {
 }
 .d-product:hover {
   color: rgb(255, 0, 0);
+}
+
+.bill-page {
+  position: fixed;
+  left: -45vw;
+  top: 20vh;
+  width: 45vw;
+  height: 70vh;
+  padding: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.95);
+  transition: 0.3s;
+}
+.bill-page p:not(p:last-of-type) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-bill {
+  left: 0;
+}
+
+.close-bill {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 1.2em;
+  background-color: transparent;
+  color: white;
+  border: none;
 }
 
 /*# sourceMappingURL=App.css.map */

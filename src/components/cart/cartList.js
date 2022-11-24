@@ -1,5 +1,7 @@
 import {useDispatch} from "react-redux";
 
+import {BillPage} from "./billPage";
+
 export const CartList = ({showCart, cartProducts}) => {
     const dispatch = useDispatch();
 
@@ -23,13 +25,16 @@ export const CartList = ({showCart, cartProducts}) => {
         dispatch({type: "cart/changeCount", payload: {count: Number(e.target.value), index: index}})
     }
     const finalOrder = () => {
-        document.getElementById("alert").style.display = "block";
+        document.getElementById("bill").classList.add("show-bill");
+    }
+    const closeBill = () => {
+        document.getElementById("bill").classList.remove("show-bill");
     }
 
     return(
         <div className={showCart ? "open-list" : "close-list"}>
             {cartProducts.length === 0 ?
-                <span className="align-self-center">empty</span> :
+                <span className="align-self-center fw-bold">empty</span> :
                 <>
                     <ul>
                         {cartProducts.map((item, index) => {
@@ -42,13 +47,13 @@ export const CartList = ({showCart, cartProducts}) => {
                             }
                         )}
                     </ul>
-                    <p className="total-price">Total Amounts: {totalPrices()}</p>
+                    <p className="total-price">Total Prices: {totalPrices()}</p>
                     <div className="d-flex justify-content-around mt-2">
                         <button className="order" onClick={finalOrder}>Order</button>
                         <button className="cancel-order" onClick={clearCart}>Cancel</button>
                     </div>
-                    <div id="alert" className="alert alert-success text-center mt-2" style={{display: 'none'}}>
-                        successfully
+                    <div id="bill" className="bill-page">
+                        <BillPage totalPrice={Number(totalPrices())} closeBill={closeBill} />
                     </div>
                 </>
             }

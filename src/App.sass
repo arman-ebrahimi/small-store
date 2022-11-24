@@ -1,5 +1,13 @@
 $color1 : aqua
 $trans: 0.3s
+@mixin btn-close
+  position: absolute
+  top: 5%
+  right: 5%
+  font-size: 1.2em
+  background-color: transparent
+  color: white
+  border: none
 
 .App
     background-color: black
@@ -63,6 +71,7 @@ $trans: 0.3s
           &:hover div
             transform: translateX(-5px)
             margin-left: 10px
+
 .detail-page
   position: fixed
   width: 45vw
@@ -76,14 +85,8 @@ $trans: 0.3s
   padding: 0 20px
   right: -45vw
   transition: $trans
-  .close
-    position: absolute
-    top: 5%
-    right: 5%
-    font-size: 1.2em
-    background-color: transparent
-    color: white
-    border: none
+  .close-detail
+    @include btn-close
   img
     width: 25%
     aspect-ratio: 1 / 1
@@ -92,6 +95,7 @@ $trans: 0.3s
     font-size: 0.8em
 .show-detail
   right: 0
+
 .close-list
   display: none
 .open-list
@@ -186,5 +190,24 @@ button.cancel-order, button.order
   color: rgba(255,0,0, 0.5)
   &:hover
     color: rgb(255,0, 0)
+
+.bill-page
+  position: fixed
+  left: -45vw
+  top: 20vh
+  width: 45vw
+  height: 70vh
+  padding: 20px
+  color: white
+  background-color: rgba(0, 0, 0, 0.95)
+  transition: $trans
+  p:not(p:last-of-type)
+    display: flex
+    justify-content: space-between
+.show-bill
+  left: 0
+.close-bill
+  @include btn-close
+
 
 
