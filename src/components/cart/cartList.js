@@ -47,7 +47,7 @@ export const CartList = ({showCart, cartProducts}) => {
                             }
                         )}
                     </ul>
-                    <p className="total-price">Total Prices: {totalPrices()}</p>
+                    <p className="total-price">Total Prices: ${totalPrices()}</p>
                     <div className="d-flex justify-content-around mt-2">
                         <button className="order" onClick={finalOrder}>Order</button>
                         <button className="cancel-order" onClick={clearCart}>Cancel</button>

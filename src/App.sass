@@ -208,6 +208,14 @@ button.cancel-order, button.order
   left: 0
 .close-bill
   @include btn-close
+@media screen and (max-width: 992px)
+  .grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(5, 50vh)
+@media screen and (max-width: 778px)
+  .grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(8, 50vh)
 
 
 
