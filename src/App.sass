@@ -11,6 +11,7 @@ $trans: 0.3s
 
 .App
     background-color: black
+    box-sizing: border-box
 .menu
     z-index: 1
     > div
@@ -35,7 +36,7 @@ $trans: 0.3s
                 position: absolute
                 bottom: 0
                 right: 0
-                border-right: solid #6c757d 17vw
+                border-right: solid #6c757d calc((100vw) / 5)
                 border-top: solid transparent 8vh
                 transition: $trans
             &:hover img
@@ -212,10 +213,35 @@ button.cancel-order, button.order
   .grid
     grid-template-columns: repeat(3, 1fr)
     grid-template-rows: repeat(5, 50vh)
+    .item
+      p
+        font-size: 1.5vw
+      button
+        font-size: 1.2vw
+      .img-box .triangle
+        border-right: solid #6c757d calc((100vw) / 3)
 @media screen and (max-width: 778px)
   .grid
     grid-template-columns: repeat(2, 1fr)
     grid-template-rows: repeat(8, 50vh)
+    .item
+      p
+        font-size: 2vw
+      button
+        font-size: 1.6vw
+      .img-box .triangle
+        border-right: solid #6c757d calc((100vw) / 2)
+@media screen and (max-width: 500px)
+  .grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(15, 50vh)
+    .item
+      p
+        font-size: 2.5vw
+      button
+        font-size: 2vw
+      .img-box .triangle
+        border-right: solid #6c757d 100vw
 
 
 

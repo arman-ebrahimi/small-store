@@ -1,5 +1,6 @@
 .App {
   background-color: black;
+  box-sizing: border-box;
 }
 
 .menu {
@@ -32,7 +33,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  border-right: solid #6c757d 17vw;
+  border-right: solid #6c757d 20vw;
   border-top: solid transparent 8vh;
   transition: 0.3s;
 }
@@ -278,11 +279,44 @@ button.cancel-order, button.order {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 50vh);
   }
+  .grid .item p {
+    font-size: 1.5vw;
+  }
+  .grid .item button {
+    font-size: 1.2vw;
+  }
+  .grid .item .img-box .triangle {
+    border-right: solid #6c757d 33.3333333333vw;
+  }
 }
 @media screen and (max-width: 778px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(8, 50vh);
+  }
+  .grid .item p {
+    font-size: 2vw;
+  }
+  .grid .item button {
+    font-size: 1.6vw;
+  }
+  .grid .item .img-box .triangle {
+    border-right: solid #6c757d 50vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(15, 50vh);
+  }
+  .grid .item p {
+    font-size: 2.5vw;
+  }
+  .grid .item button {
+    font-size: 2vw;
+  }
+  .grid .item .img-box .triangle {
+    border-right: solid #6c757d 100vw;
   }
 }
 
