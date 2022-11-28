@@ -3,7 +3,7 @@ $trans: 0.3s
 @mixin btn-close
   position: absolute
   top: 5%
-  right: 5%
+  right: 2%
   font-size: 1.2em
   background-color: transparent
   color: white
@@ -53,7 +53,7 @@ $trans: 0.3s
         .btn-cart
           color: $color1
           font-weight: bold
-          border: solid 2px $color1
+          border: solid 1px $color1
           border-radius: 15px 8px 15px 8px
           padding: 5px
           overflow: hidden
@@ -62,10 +62,9 @@ $trans: 0.3s
             display: inline-block
             height: 15px
             width: 15px
-            line-height: 8px
+            line-height: 9px
             font-size: 1vw
-            font-weight: bold
-            border: solid $color1 2px
+            border: solid $color1 1px
             border-radius: 50%
             transform: translateX(20px)
             transition: $trans
@@ -76,14 +75,14 @@ $trans: 0.3s
 .detail-page
   position: fixed
   width: 45vw
-  height: 70vh
-  top: 20vh
+  height: 90vh
+  top: 15vh
   background-color: rgba(0, 0, 0, 0.9)
   color: white
   display: flex
   flex-direction: column
   justify-content: space-around
-  padding: 0 20px
+  padding: 20px
   right: -45vw
   transition: $trans
   .close-detail
@@ -94,6 +93,7 @@ $trans: 0.3s
     border-radius: 10px
   ul
     font-size: 0.8em
+    padding-left: 5px
 .show-detail
   right: 0
 
@@ -195,7 +195,7 @@ button.cancel-order, button.order
 .bill-page
   position: fixed
   left: -45vw
-  top: 20vh
+  top: 15vh
   width: 45vw
   height: 70vh
   padding: 20px
@@ -209,39 +209,68 @@ button.cancel-order, button.order
   left: 0
 .close-bill
   @include btn-close
+
 @media screen and (max-width: 992px)
   .grid
     grid-template-columns: repeat(3, 1fr)
     grid-template-rows: repeat(5, 50vh)
     .item
-      p
+      p, .btn-cart div
         font-size: 1.5vw
       button
         font-size: 1.2vw
       .img-box .triangle
         border-right: solid #6c757d calc((100vw) / 3)
+  .detail-page
+    h6
+      font-size: 0.9em
+    ul
+      font-size: 0.7em
+  .bill-page
+    width: 60vw
+    left: -60vw
+    p, label
+      font-size: 0.8em
+    h4
+      font-size: 1em
+  .show-bill
+    left: 0
+
 @media screen and (max-width: 778px)
   .grid
     grid-template-columns: repeat(2, 1fr)
     grid-template-rows: repeat(8, 50vh)
     .item
-      p
+      p, .btn-cart div
         font-size: 2vw
       button
         font-size: 1.6vw
       .img-box .triangle
         border-right: solid #6c757d calc((100vw) / 2)
+  .detail-page
+    width: 60vw
+    right: -60vw
+  .show-detail
+    right: 0
+  .bill-page label
+    width: 100%
+
 @media screen and (max-width: 500px)
   .grid
-    grid-template-columns: 1fr
-    grid-template-rows: repeat(15, 50vh)
+    grid-template-columns: 80%
+    justify-content: center
+    grid-template-rows: repeat(15, 70vh)
     .item
-      p
-        font-size: 2.5vw
+      p, .btn-cart div
+        font-size: 3vw
       button
-        font-size: 2vw
+        font-size: 2.4vw
       .img-box .triangle
         border-right: solid #6c757d 100vw
-
+  .detail-page
+    width: 70vw
+    right: -70vw
+  .show-detail
+    right: 0
 
 
