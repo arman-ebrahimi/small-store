@@ -81,7 +81,8 @@
   position: fixed;
   width: 45vw;
   height: 90vh;
-  top: 15vh;
+  overflow: scroll;
+  top: 20vh;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   display: flex;
@@ -100,7 +101,7 @@
   color: white;
   border: none;
 }
-.detail-page img {
+.detail-page img.thumb-img {
   width: 25%;
   aspect-ratio: 1/1;
   border-radius: 10px;
@@ -108,6 +109,19 @@
 .detail-page ul {
   font-size: 0.8em;
   padding-left: 5px;
+}
+.detail-page div.focused-img {
+  opacity: 0;
+  position: absolute;
+  width: 60%;
+  aspect-ratio: 1/1;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+}
+.detail-page div.show-focused-img {
+  opacity: 1;
 }
 
 .show-detail {
@@ -123,9 +137,8 @@
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  width: 15vw;
+  width: 20vw;
   padding: 15px 0;
-  aspect-ratio: 2/1;
   top: 200%;
   right: 30%;
   background-color: white;
@@ -249,7 +262,8 @@ button.cancel-order, button.order {
   left: -45vw;
   top: 15vh;
   width: 45vw;
-  height: 70vh;
+  height: 80vh;
+  overflow: scroll;
   padding: 20px;
   color: white;
   background-color: rgba(0, 0, 0, 0.95);
@@ -294,10 +308,6 @@ button.cancel-order, button.order {
   .detail-page ul {
     font-size: 0.7em;
   }
-  .bill-page {
-    width: 60vw;
-    left: -60vw;
-  }
   .bill-page p, .bill-page label {
     font-size: 0.8em;
   }
@@ -306,6 +316,9 @@ button.cancel-order, button.order {
   }
   .show-bill {
     left: 0;
+  }
+  .open-list {
+    width: 30vw;
   }
 }
 @media screen and (max-width: 778px) {
@@ -329,8 +342,17 @@ button.cancel-order, button.order {
   .show-detail {
     right: 0;
   }
-  .bill-page label {
-    width: 100%;
+  .bill-page textarea {
+    width: 100% !important;
+  }
+  .bill-page p, .bill-page label {
+    font-size: 0.7em;
+  }
+  .bill-page h4 {
+    font-size: 0.9em;
+  }
+  .open-list {
+    width: 40vw;
   }
 }
 @media screen and (max-width: 500px) {
