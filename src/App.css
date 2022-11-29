@@ -273,6 +273,17 @@ button.cancel-order, button.order {
   display: flex;
   justify-content: space-between;
 }
+.bill-page input:focus, .bill-page textarea:focus {
+  outline: solid 2px #6c757d;
+}
+.bill-page .left-arrow {
+  display: inline-block;
+  animation: left-anima 1s infinite;
+}
+.bill-page .right-arrow {
+  display: inline-block;
+  animation: right-anima 1s infinite;
+}
 
 .show-bill {
   left: 0;
@@ -288,6 +299,22 @@ button.cancel-order, button.order {
   border: none;
 }
 
+@keyframes left-anima {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+@keyframes right-anima {
+  0% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
 @media screen and (max-width: 992px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);

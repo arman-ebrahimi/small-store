@@ -5,10 +5,10 @@ export const CartSlice = createSlice({
     initialState: [],
     reducers: {
         addToCart(state, action){
-            const existIndex = state.findIndex(item => item.shortName === action.payload.shortName);
+            const existIndex = state.findIndex(item => item.name === action.payload.name);
             if(existIndex !== -1){
                 if(state[existIndex].count === state[existIndex].quantity){
-                    return alert("Your order is more than the product's quantity");
+                    return alert("Your order is more than the product's quantity" + state[existIndex].count);
                 }
                 state[existIndex].count += 1;
             }

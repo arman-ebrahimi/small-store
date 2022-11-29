@@ -1,4 +1,5 @@
-$color1 : aqua
+$color1: aqua
+$color2: #6c757d
 $trans: 0.3s
 @mixin btn-close
   position: absolute
@@ -36,7 +37,7 @@ $trans: 0.3s
                 position: absolute
                 bottom: 0
                 right: 0
-                border-right: solid #6c757d calc((100vw) / 5)
+                border-right: solid $color2 calc((100vw) / 5)
                 border-top: solid transparent 8vh
                 transition: $trans
             &:hover img
@@ -217,10 +218,29 @@ button.cancel-order, button.order
   p:not(p:last-of-type)
     display: flex
     justify-content: space-between
+  input:focus, textarea:focus
+    outline: solid 2px $color2
+  .left-arrow
+    display: inline-block
+    animation: left-anima 1s infinite
+  .right-arrow
+    display: inline-block
+    animation: right-anima 1s infinite
 .show-bill
   left: 0
 .close-bill
   @include btn-close
+
+@keyframes left-anima
+  0%
+    transform: translateX(-20px)
+  100%
+    transform: translateX(5px)
+@keyframes right-anima
+  0%
+    transform: translateX(20px)
+  100%
+    transform: translateX(-5px)
 
 @media screen and (max-width: 992px)
   .grid
@@ -232,7 +252,7 @@ button.cancel-order, button.order
       button
         font-size: 1.2vw
       .img-box .triangle
-        border-right: solid #6c757d calc((100vw) / 3)
+        border-right: solid $color2 calc((100vw) / 3)
   .detail-page
     h6
       font-size: 0.9em
@@ -258,7 +278,7 @@ button.cancel-order, button.order
       button
         font-size: 1.6vw
       .img-box .triangle
-        border-right: solid #6c757d calc((100vw) / 2)
+        border-right: solid $color2 calc((100vw) / 2)
   .detail-page
     width: 60vw
     right: -60vw
@@ -285,7 +305,7 @@ button.cancel-order, button.order
       button
         font-size: 2.4vw
       .img-box .triangle
-        border-right: solid #6c757d 100vw
+        border-right: solid $color2 100vw
   .detail-page
     width: 70vw
     right: -70vw

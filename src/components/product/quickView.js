@@ -21,12 +21,12 @@ export const QuickView = ({isShow, product, handleClose}) => {
             <div className="d-flex justify-content-around">
                 {product.thumbnails.map((item, index) => {
                     return(
-                        <img className="thumb-img" src={item} alt="" onMouseOver={() => handleShowImage(index)} onMouseOut={closeImage} />
+                        <img className="thumb-img" src={item} alt="img" onMouseOver={() => handleShowImage(index)} onMouseOut={closeImage} />
                     )
                 })}
             </div>
             <div className={`focused-img ${bigImage.show && "show-focused-img"}`}>
-                <img src={product.thumbnails[bigImage.index]} width="100%" height="100%" alt="" />
+                <img src={product.thumbnails[bigImage.index]} width="100%" height="100%" alt="img" />
             </div>
         </div>
     )

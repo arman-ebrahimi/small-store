@@ -19,6 +19,9 @@ export const CartList = ({showCart, cartProducts}) => {
         dispatch({type: "cart/removeProduct", payload: index})
     }
     const changeCount = (e, index) => {
+        if(isNaN(Number(e.target.value))){
+            return alert("Please enter a number!");
+        }
         if(Number(e.target.value) > cartProducts[index].quantity){
             return alert("Your order is more than the product's quantity");
         }
