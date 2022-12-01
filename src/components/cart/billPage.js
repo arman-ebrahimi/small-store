@@ -5,6 +5,7 @@ export const BillPage = ({totalPrice, closeBill}) => {
     return(
         <>
             <button className="close-bill" onClick={closeBill}>&#x2715;</button>
+            <div className="emoji"><span>&#128077;</span></div>
             <h4 className="text-center">Please complete your order</h4><br />
             <p><span>Total of your products' price: </span><span>${totalPrice}</span></p>
             <p><span>Tax: </span><span>3%</span></p>

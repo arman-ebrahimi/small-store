@@ -276,6 +276,12 @@ button.cancel-order, button.order {
 .bill-page input:focus, .bill-page textarea:focus {
   outline: solid 2px #6c757d;
 }
+.bill-page .emoji {
+  font-size: 1.5em;
+  text-align: center;
+  margin: auto;
+  animation: rotate 2s 2s;
+}
 .bill-page .left-arrow {
   display: inline-block;
   animation: left-anima 1s infinite;
@@ -313,6 +319,23 @@ button.cancel-order, button.order {
   }
   100% {
     transform: translateX(-5px);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(-60deg);
+  }
+  60% {
+    transform: rotate(0);
+  }
+  80% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(0);
   }
 }
 @media screen and (max-width: 992px) {

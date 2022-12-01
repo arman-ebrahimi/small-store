@@ -220,6 +220,11 @@ button.cancel-order, button.order
     justify-content: space-between
   input:focus, textarea:focus
     outline: solid 2px $color2
+  .emoji
+    font-size: 1.5em
+    text-align: center
+    margin: auto
+    animation: rotate 2s 2s
   .left-arrow
     display: inline-block
     animation: left-anima 1s infinite
@@ -241,6 +246,17 @@ button.cancel-order, button.order
     transform: translateX(20px)
   100%
     transform: translateX(-5px)
+@keyframes rotate
+  0%
+    transform: rotate(0)
+  30%
+    transform: rotate(-60deg)
+  60%
+    transform: rotate(0)
+  80%
+    transform: rotate(-40deg)
+  100%
+    transform: rotate(0)
 
 @media screen and (max-width: 992px)
   .grid
