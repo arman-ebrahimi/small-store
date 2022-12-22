@@ -19,7 +19,7 @@ export const Card = ({product, showProductSlide}) => {
                         <p className="card-text text-end fw-bold">{product.price}</p>
                     </div>
                     <div className="d-flex justify-content-between">
-                        <button className="btn btn-sm bg-transparent text-white" onClick={showProductSlide}><span className="q-mark me-1">?</span>Quick-view</button>
+                        <button className="btn btn-sm bg-transparent text-white" onClick={showProductSlide}><span className="q-mark me-1">?</span>More</button>
                         <button className="btn btn-sm bg-transparent btn-cart text-nowrap" onClick={addToCart}>Add to cart<div><span>+</span></div></button>
                     </div>
                 </div>
