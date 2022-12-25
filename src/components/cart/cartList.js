@@ -3,13 +3,14 @@ import {useNavigate} from "react-router-dom";
 
 import {useTotalPrice} from "./totalPrice";
 
-export const CartList = ({showCart, cartProducts}) => {
+export const CartList = ({showCart, setShow, cartProducts}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const total = useTotalPrice();
     const clearCart = () => {
         dispatch({type: "cart/clearCart"})
+        setShow(false)
     }
     const removeProduct = (index) => {
         dispatch({type: "cart/removeProduct", payload: index})
@@ -24,11 +25,21 @@ export const CartList = ({showCart, cartProducts}) => {
         dispatch({type: "cart/changeCount", payload: {count: Number(e.target.value), index: index}})
     }
     const finalOrder = () => {
+        setShow(false)
         navigate("/order");
     }
 
+    const consideredElement1 = document.getElementById("cart-list");
+    document.addEventListener("mouseup", (e) => {
+        if(consideredElement1.contains(e.target)){
+        }
+        else {
+            setShow(false)
+        }
+    })
+
     return(
-        <div className={showCart ? "open-list" : "close-list"}>
+        <div id="cart-list" className={showCart ? "open-list" : "close-list"}>
             {cartProducts.length === 0 ?
                 <span className="align-self-center fw-bold">empty</span> :
                 <>

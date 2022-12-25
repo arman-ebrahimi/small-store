@@ -14,7 +14,6 @@ export const Navbar = () => {
         setShowCart(false)
         navigate("/")
     }
-
     useEffect(() => {
         const target = document.getElementById('cart-anima');
         target.classList.remove("show-anima2");
@@ -31,8 +30,8 @@ export const Navbar = () => {
             <div>contact</div>
             <div className="ms-auto position-relative">
                 <span id="cart-anima" className={`cart-anima ${cartProducts.length === 1 && "show-anima1"}`}>{cartProducts.length}</span>
-                <img width="30" height="30" src={cartProducts.length === 0 ? "/cart2.png" : "/cart1.png"} alt="cart" onClick={showCartList} />
-                <CartList showCart={showCart} cartProducts={cartProducts} />
+                <img id="cart-img" width="30" height="30" src={cartProducts.length === 0 ? "/cart2.png" : "/cart1.png"} alt="cart" onClick={showCartList} />
+                <CartList showCart={showCart} setShow={setShowCart} cartProducts={cartProducts} />
             </div>
         </div>
     )
