@@ -29,9 +29,9 @@ export const CartList = ({showCart, setShow, cartProducts}) => {
         navigate("/order");
     }
 
-    const consideredElement1 = document.getElementById("cart-list");
+    const cartBox = document.getElementById("cart-list");
     document.addEventListener("mouseup", (e) => {
-        if(consideredElement1.contains(e.target)){
+        if(cartBox.contains(e.target)){
         }
         else {
             setShow(false)

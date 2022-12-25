@@ -18,8 +18,11 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 50vh);
+  grid-template-rows: repeat(3, 60vh);
   grid-gap: 30px;
+}
+.grid .item {
+  border-radius: 10px;
 }
 .grid .item p {
   font-size: 1vw;
@@ -30,8 +33,8 @@
   overflow: hidden;
 }
 .grid .item .img-box img {
+  width: 100%;
   height: 100%;
-  object-fit: contain;
   transition: 0.3s;
 }
 .grid .item .img-box .triangle {
@@ -338,7 +341,7 @@ button.cancel-order, button.order {
 @media screen and (max-width: 992px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 50vh);
+    grid-template-rows: repeat(5, 60vh);
   }
   .grid .item p, .grid .item .btn-cart div {
     font-size: 1.5vw;
@@ -371,7 +374,7 @@ button.cancel-order, button.order {
 @media screen and (max-width: 778px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(8, 50vh);
+    grid-template-rows: repeat(8, 60vh);
   }
   .grid .item p, .grid .item .btn-cart div {
     font-size: 2vw;
@@ -431,6 +434,14 @@ button.cancel-order, button.order {
   }
   .open-list {
     width: 55vw;
+  }
+  .detail-page div.focused-img {
+    width: 90%;
+  }
+}
+@media (orientation: landscape) {
+  .detail-page div.focused-img {
+    width: 45%;
   }
 }
 

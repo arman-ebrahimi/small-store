@@ -24,58 +24,59 @@ $trans: 0.3s
 .grid
     display: grid
     grid-template-columns: repeat(5,1fr)
-    grid-template-rows: repeat(3,50vh)
+    grid-template-rows: repeat(3,60vh)
     grid-gap: 30px
     .item
-        p
-          font-size: 1vw
-        .img-box
-            height: 50%
-            position: relative
-            overflow: hidden
-            img
-                height: 100%
-                object-fit: contain
-                transition: $trans
-            .triangle
-                position: absolute
-                bottom: 0
-                right: 0
-                border-right: solid $color2 calc((100vw) / 5)
-                border-top: solid transparent 8vh
-                transition: $trans
-            &:hover img
-                transform: scale(1.1)
-            &:hover .triangle
-                border-top-width: 0
-        .q-mark
-          padding: 0 4px
-          border: 1px solid
-          border-radius: 50%
-          font-size: 0.8em
-        button
-          font-size: 0.8vw
-        .btn-cart
+      border-radius: 10px
+      p
+        font-size: 1vw
+      .img-box
+        height: 50%
+        position: relative
+        overflow: hidden
+        img
+          width: 100%
+          height: 100%
+          transition: $trans
+        .triangle
+          position: absolute
+          bottom: 0
+          right: 0
+          border-right: solid $color2 calc((100vw) / 5)
+          border-top: solid transparent 8vh
+          transition: $trans
+        &:hover img
+          transform: scale(1.1)
+        &:hover .triangle
+          border-top-width: 0
+      .q-mark
+        padding: 0 4px
+        border: 1px solid
+        border-radius: 50%
+        font-size: 0.8em
+      button
+        font-size: 0.8vw
+      .btn-cart
+        color: $color1
+        font-weight: bold
+        border: solid 1px $color1
+        border-radius: 15px 8px 15px 8px
+        padding: 5px
+        overflow: hidden
+        div
           color: $color1
-          font-weight: bold
-          border: solid 1px $color1
-          border-radius: 15px 8px 15px 8px
-          padding: 5px
-          overflow: hidden
-          div
-            color: $color1
-            display: inline-block
-            height: 15px
-            width: 15px
-            line-height: 9px
-            font-size: 1vw
-            border: solid $color1 1px
-            border-radius: 50%
-            transform: translateX(20px)
-            transition: $trans
-          &:hover div
-            transform: translateX(-5px)
-            margin-left: 10px
+          display: inline-block
+          height: 15px
+          width: 15px
+          line-height: 9px
+          font-size: 1vw
+          border: solid $color1 1px
+          border-radius: 50%
+          transform: translateX(20px)
+          transition: $trans
+        &:hover div
+          transform: translateX(-5px)
+          margin-left: 10px
 
 .detail-page
   position: fixed
@@ -265,7 +266,7 @@ button.cancel-order, button.order
 @media screen and (max-width: 992px)
   .grid
     grid-template-columns: repeat(3, 1fr)
-    grid-template-rows: repeat(5, 50vh)
+    grid-template-rows: repeat(5, 60vh)
     .item
       p, .btn-cart div
         font-size: 1.5vw
@@ -291,7 +292,7 @@ button.cancel-order, button.order
 @media screen and (max-width: 778px)
   .grid
     grid-template-columns: repeat(2, 1fr)
-    grid-template-rows: repeat(8, 50vh)
+    grid-template-rows: repeat(8, 60vh)
     .item
       p, .btn-cart div
         font-size: 2vw
@@ -337,5 +338,10 @@ button.cancel-order, button.order
     right: 0
   .open-list
     width: 55vw
+  .detail-page div.focused-img
+    width: 90%
+@media (orientation: landscape)
+  .detail-page div.focused-img
+    width: 45%
 
 
