@@ -12,7 +12,7 @@ export const Card = ({product, showProductSlide}) => {
                 <img src={product.pic} alt="..." />
                 <div className="triangle"></div>
             </div>
-                <div className="d-flex flex-column justify-content-around bg-secondary text-white h-50">
+                <div className="text-box d-flex flex-column justify-content-around text-white h-50">
                     <p className="ps-2">{product.shortName}</p>
                     <div className="d-flex justify-content-between px-2">
                         <p>Quantity: <span style={product.quantity < 5 ? {color: 'red', padding: '0 3px', border: '1px solid red'} : {}}>{product.quantity}</span></p>

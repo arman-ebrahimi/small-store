@@ -1,5 +1,5 @@
 $color1: aqua
-$color2: #6c757d
+$color2: DarkSlateGray
 $trans: 0.3s
 @mixin btn-close
   position: absolute
@@ -11,7 +11,7 @@ $trans: 0.3s
   border: none
 
 .App
-    background-color: black
+    background-color: #222
     box-sizing: border-box
 .menu
     z-index: 1
@@ -21,6 +21,40 @@ $trans: 0.3s
       cursor: pointer
       color: seagreen
       font-weight: bold
+.text-anima
+  position: absolute
+  color: white
+  animation: move 4s infinite linear forwards, color 0.5s infinite linear
+@keyframes move
+  0%
+    left: 0%
+    opacity: 0.2
+  5%
+    left: 50%
+    transform: translateX(-50%)
+    opacity: 1
+  80%
+    left: 50%
+    transform: translateX(-50%)
+    opacity: 1
+  85%
+    left: 40%
+    opacity: 1
+  100%
+    left: 70%
+    opacity: 0
+@keyframes color
+  0%
+    color: white
+  25%
+    color: tomato
+  50%
+    color: seagreen
+  75%
+    color: tomato
+  100%
+    color: white
+
 .grid
     display: grid
     grid-template-columns: repeat(5,1fr)
@@ -30,6 +64,8 @@ $trans: 0.3s
       border-radius: 10px
       p
         font-size: 1vw
+      .text-box
+        background-color: $color2
       .img-box
         height: 50%
         position: relative
@@ -321,7 +357,7 @@ button.cancel-order, button.order
 
 @media screen and (max-width: 488px)
   .grid
-    grid-template-columns: 80%
+    grid-template-columns: 70%
     justify-content: center
     grid-template-rows: repeat(15, 60vh)
     .item
