@@ -21,30 +21,30 @@ $trans: 0.3s
       cursor: pointer
       color: seagreen
       font-weight: bold
-.text-anima
-  font-size: 1.3em
+.text-anima1, .text-anima2
+  font-size: 1.2em
   position: absolute
   color: white
-  animation: move 4s infinite linear forwards, color 0.5s infinite linear
-@keyframes move
+.text-anima1
+  animation: move-text1 4s infinite linear forwards, change-color 0.5s infinite linear
+.text-anima2
+  animation: change-color 0.5s infinite linear, move-text2 2s infinite linear forwards
+@keyframes move-text1
   0%
-    left: 0%
+    left: 0
     opacity: 0.2
   5%
-    left: 50%
-    transform: translateX(-50%)
+    left: 55%
     opacity: 1
   80%
-    left: 50%
-    transform: translateX(-50%)
-    opacity: 1
+    left: 55%
   85%
-    left: 40%
+    left: 50%
     opacity: 1
   100%
     left: 70%
     opacity: 0
-@keyframes color
+@keyframes change-color
   0%
     color: white
   25%
@@ -55,6 +55,26 @@ $trans: 0.3s
     color: tomato
   100%
     color: white
+
+@keyframes move-text2
+  0%
+    left: 0
+    opacity: 0.2
+  20%
+    left: 5%
+    opacity: 1
+  40%
+    left: 5%
+  50%
+    left: 7%
+  70%
+    left: 3%
+  90%
+    left: 7%
+    opacity: 1
+  100%
+    left: -50%
+    opacity: 0.2
 
 .grid
     display: grid
@@ -351,11 +371,13 @@ button.cancel-order, button.order
       font-size: 0.9em
   .open-list
     width: 40vw
+  .text-anima1
+    font-size: 1.1em
 
 @media screen and (max-width: 600px)
   .grid .item button
     font-size: 2.2vw
-  .text-anima
+  .text-anima1, .text-anima2
     font-size: 1em
 
 @media screen and (max-width: 488px)

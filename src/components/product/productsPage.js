@@ -23,7 +23,8 @@ export const ProductsPage = () => {
     }
     return (
         <>
-            <div className="text-anima mt-2">Buy in cheap right now!</div>
+            <div className="text-anima1 mt-2">Buy in cheap right now!</div>
+            <div className="text-anima2 mt-2">Kinds of memories</div>
             <div className="grid m-5">
                 {allProducts.map((product, index) =>
                     <Card product={product} key={index} showProductSlide={() => handleClick(index)} />
