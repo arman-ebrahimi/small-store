@@ -538,7 +538,7 @@ button.cancel-order, button.order {
     width: 45%;
   }
 }
-@media screen and (max-width: 600px) and (orientation: landscape) {
+@media screen and (max-width: 788px) and (orientation: landscape) {
   .grid {
     grid-template-rows: repeat(15, 75vh);
   }
