@@ -1,6 +1,7 @@
 {
   "short_name": "Small Store",
   "name": "Small Store by react and redux",
+  "description": "This app made with react and redux",
   "icons": [
     {
       "src": "store.png",
